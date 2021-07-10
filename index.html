@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Math Training</title>
+  </head>
+  <body>
+    <div class="screen">
+      <h1>Math Training</h1>
+      <a href="#" class="start">Start the game</a>
+    </div>
+
+    <div class="screen">
+      <h1>Choose game duration</h1>
+
+      <!-- <ul class="difficulty-list">
+        <li>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </li>
+
+        <li>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </li>
+
+        <li>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </li>
+
+        <li>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </li>
+      </ul> -->
+
+      <ul class="time-list">
+        <li>
+          <button class="btn start-btn" data-time="10">
+            10 sec
+          </button>
+        </li>
+        <li>
+          <button class="btn start-btn" data-time="20">
+            20 sec
+          </button>
+        </li>
+        <li>
+          <button class="btn start-btn" data-time="30">
+            30 sec
+          </button>
+        </li>
+        <li>
+          <button class="btn start-btn" data-time="45">
+            45 sec
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="screen">
+      <h3>Time left <span id="time">00:00</span></h3>
+      <div class="game-window">
+        <div class="game-window__game-zone">
+          <div class="row">
+            <span class="field field__numb1"></span>
+            <span class="field field__wo-borders field-operation"></span>
+            <span class="field field__numb2"></span>
+            <span class="field field__wo-borders field__equals">=</span>
+          </div>
+          <div class="row">
+            <div class="field solution"></div>
+          </div>
+          <div class="row keyboard-row">            
+            <button class="keyboard-btn control" data-btn="7">
+              7
+            </button>
+            <button class="keyboard-btn control" data-btn="8">
+              8
+            </button>
+            <button class="keyboard-btn control" data-btn="9">
+              9
+            </button>
+            <button class="keyboard-btn control" data-btn="4">
+              4
+            </button>
+            <button class="keyboard-btn control" data-btn="5">
+              5
+            </button>
+            <button class="keyboard-btn control" data-btn="6">
+              6
+            </button>
+            <button class="keyboard-btn control" data-btn="1">
+              1
+            </button>
+            <button class="keyboard-btn control" data-btn="2">
+              2
+            </button>
+            <button class="keyboard-btn control" data-btn="3">
+              3
+            </button>
+            <button class="keyboard-btn control" data-btn="0">
+              0
+            </button>
+            <button class="keyboard-btn erase">
+              C
+            </button>
+            <button class="keyboard-btn check">
+              =
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>
