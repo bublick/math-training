@@ -57,7 +57,7 @@ function decreaseTime() {
         finishGame();
     } else {
         time--;
-        setTime(time < 10 ? `0${time}` : time);
+        setTime(time);
     }
 }
 
@@ -87,7 +87,9 @@ function resetGame() {
 }
 
 function setTime(value) {
-    timeEl.textContent = `00:${value}`;
+    const minutes = Math.floor(value / 60);
+    const seconds = value % 60;
+    timeEl.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
 function addDigitToInput(digit) {
