@@ -24,8 +24,14 @@ startBtn.addEventListener('click', (event) => {
 
 timeList.addEventListener('click', (event) => {
     if (event.target.classList.contains('start-btn')) {
-        time = parseInt(event.target.dataset.time);
-        startGame();
+        const selectedTime = event.target.dataset.time;
+        if (selectedTime === 'infinite') {
+            time = null; // No time limit
+            startGame(true);
+        } else {
+            time = parseInt(selectedTime);
+            startGame(false);
+        }
     }
 });
 
@@ -44,11 +50,17 @@ function handleKeydown(event) {
     }
 }
 
-function startGame() {
+function startGame(isNoTimeMode) {
     screens[1].classList.add('up');
     createExercise();
-    setTime(time);
-    decreaseTimeInterval = setInterval(decreaseTime, 1000);
+
+    if (isNoTimeMode) {
+        timeEl.parentNode.classList.add('hide'); // Hide the timer
+    } else {
+        timeEl.parentNode.classList.remove('hide'); // Show the timer
+        setTime(time);
+        decreaseTimeInterval = setInterval(decreaseTime, 1000);
+    }
 }
 
 function decreaseTime() {
@@ -62,6 +74,10 @@ function decreaseTime() {
 }
 
 function finishGame() {
+    if (decreaseTimeInterval) {
+        clearInterval(decreaseTimeInterval); // Stop timer if running
+    }
+
     const finishInner = document.createElement('div');
     finishInner.classList.add('game-window__finish-inner');
     finishInner.innerHTML = `<h1>Score: <span class="primary">${score}</span></h1>`;
