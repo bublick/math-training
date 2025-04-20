@@ -43,10 +43,17 @@ document.addEventListener('keydown', handleKeydown);
 // Functions
 function handleKeydown(event) {
     const key = event.key;
+
     if (!isNaN(key)) {
+        // If the key is a number, add it to the input field
         addDigitToInput(key);
     } else if (key === 'Backspace') {
+        // If the key is "Backspace", remove the last digit from the input field
         removeDigitFromInput();
+    } else if (key === 'Enter') {
+        // If the key is "Enter", prevent default behavior and check the answer
+        event.preventDefault();
+        checkAnswer(event); // Only check the answer, do not reset the timer or create a new interval
     }
 }
 
