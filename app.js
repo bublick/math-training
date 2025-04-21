@@ -62,7 +62,13 @@ function startGame(isNoTimeMode) {
     createExercise(); // Create the first exercise
 
     if (isNoTimeMode) {
-        timeEl.parentNode.classList.add('hide'); // Hide the timer
+        time = 0; // Initialize the timer for "No Limit" mode
+        timeEl.parentNode.classList.remove('hide'); // Show the timer
+        setTime(time); // Set the initial time to 0
+        decreaseTimeInterval = setInterval(() => {
+            time++; // Increment the timer
+            setTime(time); // Update the timer display
+        }, 1000);
 
         // Create the "Finish Game" button
         const finishGameBtn = document.createElement('button');
@@ -102,7 +108,10 @@ function finishGame() {
 
     const finishInner = document.createElement('div');
     finishInner.classList.add('game-window__finish-inner');
-    finishInner.innerHTML = `<h1>Score: <span class="primary">${score}</span></h1>`;
+    finishInner.innerHTML = `
+        <h1>Score: <span class="primary">${score}</span></h1>
+        <h2>Time: <span class="primary">${formatTime(time)}</span></h2>
+    `;
 
     const retryBtn = document.createElement('div');
     retryBtn.classList.add('btn', 'button__retry');
@@ -124,10 +133,14 @@ function resetGame() {
     gameZone.classList.remove('hide');
 }
 
-function setTime(value) {
+function formatTime(value) {
     const minutes = Math.floor(value / 60);
     const seconds = value % 60;
-    timeEl.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
+
+function setTime(value) {
+    timeEl.textContent = formatTime(value);
 }
 
 function addDigitToInput(digit) {

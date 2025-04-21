@@ -130,6 +130,13 @@ h1 {
     text-transform: uppercase;
 }
 
+#time {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #16d9e3;
+}
+
 /** Toogle **/
 /* .switch {
   position: relative;
