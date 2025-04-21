@@ -1,129 +1,133 @@
 @import url('https://fonts.googleapis.com/css?family=Khula&display=swap');
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  color: #fff;
-  font-family: 'Khula', sans-serif;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
-  text-align: center;
+    color: #fff;
+    font-family: 'Khula', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
 }
 
 a {
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
 
 a:hover {
-  color: #16D9E3;
+    color: #16d9e3;
 }
 
 .start {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 h1 {
-  line-height: 1.4;
-  font-size: 4rem;
+    line-height: 1.4;
+    font-size: 4rem;
 }
 
 .screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  transition: margin 0.5s ease-out;
-  background: linear-gradient(90deg, #29323C 0%, #485563 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    transition: margin 0.5s ease-out;
+    background: linear-gradient(90deg, #29323c 0%, #485563 100%);
 }
 
 .screen.up {
-  margin-top: -100vh;
+    margin-top: -100vh;
+}
+
+.game-window__game-zone {
+    margin-bottom: 20px;
 }
 
 .time-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
 }
 
 .time-list li {
-  margin: 10px;
+    margin: 10px;
 }
 
-.btn{
-  background-color: transparent;
-  border: 2px solid #C0C0C0;
-  color: #fff;
-  cursor: pointer;
-  font-family: inherit;
-  padding: .5rem 1rem;
-  font-size: 1.5rem;
+.btn {
+    background-color: transparent;
+    border: 2px solid #c0c0c0;
+    color: #fff;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
 }
 
 .btn:hover {
-  border: 2px solid #16D9E3;
-  color: #16D9E3;
+    border: 2px solid #16d9e3;
+    color: #16d9e3;
 }
 
 .hide {
-  display: none;
-  opacity: 0;
+    display: none;
+    opacity: 0;
 }
 
 .primary {
-  color: #16D9E3;
+    color: #16d9e3;
 }
 
-.row{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-.field{
-  flex-basis: 22%;
-  font-size: 1.8em;
+.field {
+    flex-basis: 22%;
+    font-size: 1.8em;
 }
 
-.solution{
-  min-height: 50px;
+.solution {
+    min-height: 50px;
 }
 
-.keyboard-row{
-  display: flex;
-  background-color: #666;
-  justify-content: space-between;
-  align-content: space-between;
-  flex-wrap: wrap;
-  padding: 8px;
+.keyboard-row {
+    display: flex;
+    background-color: #666;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+    padding: 8px;
 }
 
-.keyboard-btn{
-  flex-basis: 30%;
-  height: 50px;
-  margin: 2px;
+.keyboard-btn {
+    flex-basis: 30%;
+    height: 50px;
+    margin: 2px;
 }
 
-.keyboard-btn.check{
-  border: 2px solid #ffffff;
-  color: #fff;
-  background-color: transparent;
-  text-transform: uppercase;
+.keyboard-btn.check {
+    border: 2px solid #ffffff;
+    color: #fff;
+    background-color: transparent;
+    text-transform: uppercase;
 }
 
-.keyboard-btn.erase{
-  border: 2px solid orange;
-  color: #fff;
-  background-color: orange;
-  text-transform: uppercase;
+.keyboard-btn.erase {
+    border: 2px solid orange;
+    color: #fff;
+    background-color: orange;
+    text-transform: uppercase;
 }
 
 /** Toogle **/

@@ -58,15 +58,24 @@ function handleKeydown(event) {
 }
 
 function startGame(isNoTimeMode) {
-    screens[1].classList.add('up');
-    createExercise();
+    screens[1].classList.add('up'); // Move to the game screen
+    createExercise(); // Create the first exercise
 
     if (isNoTimeMode) {
         timeEl.parentNode.classList.add('hide'); // Hide the timer
+
+        // Create the "Finish Game" button
+        const finishGameBtn = document.createElement('button');
+        finishGameBtn.classList.add('btn', 'finish-game-btn');
+        finishGameBtn.textContent = "Finish Game";
+        finishGameBtn.addEventListener('click', finishGame);
+
+        // Append the button to the game window
+        gameWindow.append(finishGameBtn);
     } else {
         timeEl.parentNode.classList.remove('hide'); // Show the timer
-        setTime(time);
-        decreaseTimeInterval = setInterval(decreaseTime, 1000);
+        setTime(time); // Set the initial time
+        decreaseTimeInterval = setInterval(decreaseTime, 1000); // Start the timer
     }
 }
 
@@ -82,13 +91,19 @@ function decreaseTime() {
 
 function finishGame() {
     if (decreaseTimeInterval) {
-        clearInterval(decreaseTimeInterval); // Stop timer if running
+        clearInterval(decreaseTimeInterval); // Stop the timer if running
+    }
+
+    // Remove the "Finish Game" button if it exists
+    const finishGameBtn = document.querySelector('.finish-game-btn');
+    if (finishGameBtn) {
+        finishGameBtn.remove();
     }
 
     const finishInner = document.createElement('div');
     finishInner.classList.add('game-window__finish-inner');
     finishInner.innerHTML = `<h1>Score: <span class="primary">${score}</span></h1>`;
-    
+
     const retryBtn = document.createElement('div');
     retryBtn.classList.add('btn', 'button__retry');
     retryBtn.textContent = "Retry";
